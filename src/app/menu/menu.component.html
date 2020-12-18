@@ -1,0 +1,16 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-brand">checkplace++</div>
+        <ul class="navbar-nav">
+            <li><a href="https://www.securingsoftware.blog" class="nav-link">Home</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="./board/sebas" class="nav-link">New Game</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="./load" class="nav-link">Load Game</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routeLink="./save" class="nav-link">Save Game</a></li>
+        </ul>
+
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="./login" class="nav-link">Login</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="./logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+</header>    

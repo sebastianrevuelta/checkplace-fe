@@ -58,7 +58,7 @@ export class BoardComponent implements OnInit {
     {id : 'f5', image : ""},
     {id : 'f6', image : ""},
     {id : 'f7', image : "./assets/images/pawnb.png"},
-    {id : 'f8', image : "./assets/images/knightb.png"},
+    {id : 'f8', image : "./assets/images/bishopb.png"},
     {id : 'g1', image : "./assets/images/knightw.png"},
     {id : 'g2', image : "./assets/images/pawnw.png"},
     {id : 'g3', image : ""},

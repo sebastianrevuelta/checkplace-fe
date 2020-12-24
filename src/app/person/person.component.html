@@ -1,0 +1,14 @@
+<h1>Add/Edit player</h1>
+<div class="container">
+    <fieldset class="from-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="player.name" name="name" required="required">
+
+    </fieldset>
+    <fieldset class="from-group">
+        <label>Rating</label>
+        <input type="number" [(ngModel)]="player.rating" name="rating" required="required">
+    </fieldset>
+
+    <button class="btn btn-success" (click)="savePlayer()">Save</button>
+</div>

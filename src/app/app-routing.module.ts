@@ -4,6 +4,8 @@ import { BoardComponent } from './board/board.component';
 import { ErrorComponent } from './error/error.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { PersonComponent } from './person/person.component';
+import { PlayerComponent } from './player/player.component';
 import { RouteGuardService } from './services/route-guard.service';
 
 const routes: Routes = [
@@ -11,6 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
   { path: 'board/:name', component: BoardComponent, canActivate: [RouteGuardService]},
+  { path: 'players', component: PlayerComponent, canActivate: [RouteGuardService]},
+  { path: 'players/:id', component: PersonComponent, canActivate: [RouteGuardService]},
   { path: '**', component: ErrorComponent}
 
 ];

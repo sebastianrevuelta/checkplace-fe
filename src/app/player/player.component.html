@@ -1,0 +1,29 @@
+<div class="container">
+    <h1><p>Lets go to show all the players!</p></h1>
+</div>
+<br><br>
+<div class="alert alert-success" *ngIf="deleteMessage">{{deleteMessage}}</div>
+<div class="container">
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Rating</td>
+                <td>Update</td>
+                <td>Delete</td>
+            </tr>
+            <tr *ngFor="let player of players"> 
+                <td>{{player.id}}</td>
+                <td>{{player.name}}</td>
+                <td>{{player.rating}}</td>
+                <td><button (click)=updatePlayer(player.id) class="btn btn-success">Update</button></td>
+                <td><button (click)=deletePlayer(player.id) class="btn btn-warning">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <button (click)=addPlayer() class="btn btn-success">Add Player</button>
+    </div>
+    
+</div>

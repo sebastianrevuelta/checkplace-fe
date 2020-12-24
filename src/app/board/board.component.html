@@ -1,14 +1,20 @@
 <div class="container">
 <h1><p>Lets go to play {{playerName}}!</p></h1>
-    <table class="table">
+    <table>
         <tbody>
             <tr *ngFor="let square of squares"> 
-            <td>
-                <div id={{square.id}}>
-                    <img src="{{square.image}}" />
-                </div>
-            </td>
+                <td>
+                    <div class="container" id={{square.id}}>
+                        <img src="{{square.image}}" />
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
+</div>
+<div class="container">
+    <button (click)="moveWithHistory()" class="btn btn-success">Move!</button>
+</div>
+<div class="container" *ngIf="movement">
+    {{movement}}
 </div>

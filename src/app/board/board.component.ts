@@ -1,11 +1,14 @@
+import { HttpErrorResponse, HttpResponse, HttpResponseBase } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Movement, MoveService } from '../services/move.service';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
+
 export class BoardComponent implements OnInit {
 
   //define array 
@@ -77,11 +80,38 @@ export class BoardComponent implements OnInit {
     {id : 'h8', image : "./assets/images/towerb.png"}
 
   ]
-  playerName = ''
-  constructor(private route:ActivatedRoute) { }
+  playerName = 'kasparov'
+  history = 'e2e4'
+  movement:string = ''
+
+  constructor(private route:ActivatedRoute, 
+    private moveService:MoveService) { }
 
   ngOnInit(): void {
     this.playerName = this.route.snapshot.params['name']
   }
+
+  move() {
+    this.moveService.callMove().subscribe (
+      response => this.handleSuccesfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
+  }
+
+  moveWithHistory() {
+    this.moveService.callMoveWithHistory(this.history).subscribe (
+      response => this.handleSuccesfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
+    console.log("after subscription")
+  }
+  
+  handleSuccesfulResponse(response:Movement) {
+    this.movement = response.description
+  }
+  handleErrorResponse(error:HttpErrorResponse) {
+    console.log(error.message)
+  }
+
 
 }

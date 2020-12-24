@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { ErrorComponent } from './error/error.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { LogoutComponent } from './logout/logout.component';
+import { PlayerComponent } from './player/player.component';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { LogoutComponent } from './logout/logout.component';
     ErrorComponent,
     FooterComponent,
     MenuComponent,
-    LogoutComponent
+    LogoutComponent,
+    PlayerComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

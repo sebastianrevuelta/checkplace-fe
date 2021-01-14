@@ -1,3 +1,15 @@
+#move {
+    top: 100px;
+    left: 600px;
+    position: fixed;
+}
+
+#history {
+    top: 300px;
+    left: 600px;
+    position: fixed;
+}
+
 .square {
   width: 50px;
   height: 50px;
@@ -15,34 +27,32 @@
     left: 100px;
 }
 #b8 {
-top: 100px;          
-left: 150px;
+    top: 100px;          
+    left: 150px;
 }
 #c8 {
-top: 100px;
+    top: 100px;
     left: 200px;
 }
 #d8 {
-    
-top: 100px;
-    left: 250px;
+   top: 100px;
+   left: 250px;
 }
 #e8 {
-    
-top: 100px;
-    left: 300px;
+   top: 100px;
+   left: 300px;
 }
 #f8 {
-top: 100px;
-    left: 350px;
+   top: 100px;
+   left: 350px;
 }
-			      #g8 {
+#g8 {
 top: 100px;
-    left: 400px;
+left: 400px;
 }
-					 #h8 {
+#h8 {
 top: 100px;
-    left: 450px;
+left: 450px;
 }
 					 #a7 {
 top: 150px;

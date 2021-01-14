@@ -9,7 +9,7 @@ export class BasicAuthenticationCredentialsService {
 
   constructor(public http:HttpClient) { }
 
-  executeAuthentication(username: string, password: string) {
+  executeBasicAuthentication(username: string, password: string) {
     let basicAuthHeaderString = 'Basic ' + window.btoa(username + ":" + password)
 
     let header = new HttpHeaders({
@@ -42,7 +42,7 @@ export class BasicAuthenticationCredentialsService {
     )
   }
 
-  authenticate(username: string, password: string) {
+  executeHardcodeAuthentication(username: string, password: string) {
     if (username === 'sebas' && password==='sebas') { 
       sessionStorage.setItem('username',username)
       return true;

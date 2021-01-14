@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   handleBasicAuthenticationLogin() {
-    this.basicauthCredentials.executeAuthentication(this.username,this.password).subscribe(
+    this.basicauthCredentials.executeBasicAuthentication(this.username,this.password).subscribe(
       data => {
         console.log(data)
         this.invalidLogin = false

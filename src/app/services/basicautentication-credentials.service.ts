@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { API_URL } from '../app.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class BasicAuthenticationCredentialsService {
       Authorization: basicAuthHeaderString
     })
 
-    return this.http.get<AuthenticationBean>(`http://localhost:8080/basicauth`,
+    return this.http.get<AuthenticationBean>(`${API_URL}/basicauth`,
     {headers: header}).pipe(
       map(
         data => {
@@ -30,7 +31,7 @@ export class BasicAuthenticationCredentialsService {
 
   executeJWTAuthentication(username: string, password: string) {
 
-    return this.http.post<any>(`http://localhost:8080/authenticate`,
+    return this.http.post<any>(`${API_URL}/authenticate`,
    {username,password}).pipe(
       map(
         data => {
@@ -57,7 +58,7 @@ export class BasicAuthenticationCredentialsService {
   getUserToken() {
     if (this.getUserLogged())
       return sessionStorage.getItem('token');
-      return null;
+    return null;
   }
 
   isUserLoggedIn() {

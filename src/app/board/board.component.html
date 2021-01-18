@@ -5,9 +5,58 @@
 <div class="container">
     <table>
         <tbody>
-            <tr *ngFor="let square of squares"> 
+            <tr *ngFor="let square of squares[0]"> 
                 <td>
-                    <div class="container square {{square.color}}" id={{square.id}}>
+                    <div class="container square {{square.color}}" id={{square.sqid}}>
+                        <img src="{{square.image}}" />
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let square of squares[1]"> 
+                <td>
+                    <div class="container square {{square.color}}" id={{square.sqid}}>
+                        <img src="{{square.image}}" />
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let square of squares[2]"> 
+                <td>
+                    <div class="container square {{square.color}}" id={{square.sqid}}>
+                        <img src="{{square.image}}" />
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let square of squares[3]"> 
+                <td>
+                    <div class="container square {{square.color}}" id={{square.sqid}}>
+                        <img src="{{square.image}}" />
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let square of squares[4]"> 
+                <td>
+                    <div class="container square {{square.color}}" id={{square.sqid}}>
+                        <img src="{{square.image}}" />
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let square of squares[5]"> 
+                <td>
+                    <div class="container square {{square.color}}" id={{square.sqid}}>
+                        <img src="{{square.image}}" />
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let square of squares[6]"> 
+                <td>
+                    <div class="container square {{square.color}}" id={{square.sqid}}>
+                        <img src="{{square.image}}" />
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let square of squares[7]"> 
+                <td>
+                    <div class="container square {{square.color}}" id={{square.sqid}}>
                         <img src="{{square.image}}" />
                     </div>
                 </td>
@@ -18,6 +67,6 @@
 <div class="container" id="move">
     <button (click)="move()" class="btn btn-success">Play!</button>
 </div>
-<div class="container" id="history" *ngIf="squares">
-    {{squares}}
+<div class="container" id="history" >
+    <p>{{match.history}}</p>
 </div>

@@ -12,7 +12,7 @@ export class MoveService {
   constructor(private http:HttpClient) { }
 
   callMove(match:Match) {
-    return this.http.put<Square[]>(`${JPA_API_URL}/move`,match)
+    return this.http.put<Match>(`${JPA_API_URL}/move`,match)
   }
 
 }

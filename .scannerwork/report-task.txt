@@ -1,0 +1,6 @@
+projectKey=checkplace-fe
+serverUrl=http://localhost:9000
+serverVersion=8.6.0.39681
+dashboardUrl=http://localhost:9000/dashboard?id=checkplace-fe
+ceTaskId=AXcAmefp2AfVJdJwDiPc
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXcAmefp2AfVJdJwDiPc

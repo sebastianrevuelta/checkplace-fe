@@ -1,6 +1,7 @@
-# Checkplace
+# checkplace frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+It is a frontend angular chess game
 
 ## Development server
 
@@ -25,3 +26,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Azure Deploy
+To deploy the application in Azure follow the next steps:
+1. Build the application
+          
+          ng build
+          
+2. Deploy the application with Azure CLI:
+
+          az webapp up --name {AppName} --plan {ServicePlan} --resource-group {GroupName} --location {location}
+          

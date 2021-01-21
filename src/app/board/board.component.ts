@@ -1,4 +1,4 @@
-import { HttpErrorResponse, HttpResponse, HttpResponseBase } from '@angular/common/http';
+import { HttpErrorResponse} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoveService } from '../services/move.service';
@@ -85,6 +85,7 @@ export class BoardComponent implements OnInit {
   pawng7:Piece = new Piece("black","g","7","pawn",1)
   pawnh7:Piece = new Piece("black","h","7","pawn",1)
 
+  //TODO: Create fake pieces for empty squares
   a3:Piece = new Piece("","a","3","",0)
 
   noPiece!: Piece;
@@ -92,7 +93,7 @@ export class BoardComponent implements OnInit {
     [
       {sqid : 'a1', horizontal:'a', vertical:'1', image : "./assets/images/towerw.png", color:"black", isEmpty:false, piece:this.towera1},
       {sqid : 'a2', horizontal:'a', vertical:'2', image : "./assets/images/pawnw.png", color:"white", isEmpty:false, piece:this.pawna2},
-      {sqid : 'a3', horizontal:'a', vertical:'3', image : "", color:"black", isEmpty:true, piece:this.noPiece},
+      {sqid : 'a3', horizontal:'a', vertical:'3', image : "", color:"black", isEmpty:true, piece:this.a3},
       {sqid : 'a4', horizontal:'a', vertical:'4', image : "", color:"white", isEmpty:true, piece:this.noPiece},
       {sqid : 'a5', horizontal:'a', vertical:'5', image : "", color:"black", isEmpty:true, piece:this.noPiece},
       {sqid : 'a6', horizontal:'a', vertical:'6', image : "", color:"white", isEmpty:true, piece:this.noPiece},
@@ -172,7 +173,7 @@ export class BoardComponent implements OnInit {
   ]
 
   board:Board = new Board(this.squares)
-  match:Match = new Match(this.board,"white",false,1,"New Match","","","","")
+  match:Match = new Match(this.board,"white",false,1,"","","","","")
   playerName = 'kasparov'
   history = 'e2e4'
   

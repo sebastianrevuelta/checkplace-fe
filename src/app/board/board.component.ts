@@ -3,12 +3,67 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoveService } from '../services/move.service';
 
-export class Piece {
+export abstract class Piece {
   constructor(public color:string, 
     public horizontal:string,
     public vertical:string,
     public type:string,
     public value:number) {}
+}
+
+export class Tower extends Piece { 
+  constructor(public color:string, 
+    public horizontal:string,
+    public vertical:string,
+    public type:string,
+    public value:number) {
+      super(color,horizontal,vertical,type,value)
+    }
+}
+export class Pawn extends Piece { 
+  constructor(public color:string, 
+    public horizontal:string,
+    public vertical:string,
+    public type:string,
+    public value:number) {
+      super(color,horizontal,vertical,type,value)
+    }
+}
+export class Bishop extends Piece { 
+  constructor(public color:string, 
+    public horizontal:string,
+    public vertical:string,
+    public type:string,
+    public value:number) {
+      super(color,horizontal,vertical,type,value)
+    }
+}
+export class King extends Piece { 
+  constructor(public color:string, 
+    public horizontal:string,
+    public vertical:string,
+    public type:string,
+    public value:number) {
+      super(color,horizontal,vertical,type,value)
+    }
+}
+export class Queen extends Piece { 
+  constructor(public color:string, 
+    public horizontal:string,
+    public vertical:string,
+    public type:string,
+    public value:number) {
+      super(color,horizontal,vertical,type,value)
+    }
+}
+export class Knight extends Piece {
+  constructor(public color:string, 
+    public horizontal:string,
+    public vertical:string,
+    public type:string,
+    public value:number) {
+      super(color,horizontal,vertical,type,value)
+    }
 }
 
 export class Square {
@@ -22,7 +77,7 @@ export class Square {
 }
 
 export class Board {
-  constructor(public square:Square[][]) { } 
+  constructor(public squares:Square[][]) { } 
 }
 
 export class Match {
@@ -46,54 +101,53 @@ export class Match {
 export class BoardComponent implements OnInit {
 
   //TODO: Use it in the board construction
-  towera1:Piece = new Piece("white","a","1","tower",5)
-  towerh1:Piece = new Piece("white","h","1","tower",5)
-  towera8:Piece = new Piece("black","a","8","tower",5)
-  towerh8:Piece = new Piece("black","h","8","tower",5)
+  towera1:Tower = new Tower("white","a","1","tower",5)
+  towerh1:Tower = new Tower("white","h","1","tower",5)
+  towera8:Tower = new Tower("black","a","8","tower",5)
+  towerh8:Tower = new Tower("black","h","8","tower",5)
 
-  knightb1:Piece = new Piece("white","b","1","knight",3)
-  knightg1:Piece = new Piece("white","g","1","knight",3)
-  knightb8:Piece = new Piece("black","b","8","knight",3)
-  knightg8:Piece = new Piece("black","g","8","knight",3)
+  knightb1:Knight = new Knight("white","b","1","knight",3)
+  knightg1:Knight = new Knight("white","g","1","knight",3)
+  knightb8:Knight = new Knight("black","b","8","knight",3)
+  knightg8:Knight = new Knight("black","g","8","knight",3)
 
-  bishopc1:Piece = new Piece("white","c","1","bishop",3)
-  bishopf1:Piece = new Piece("white","f","1","bishop",3)
-  bishopc8:Piece = new Piece("black","c","8","bishop",3)
-  bishopf8:Piece = new Piece("black","f","8","bishop",3)
+  bishopc1:Bishop = new Bishop("white","c","1","bishop",3)
+  bishopf1:Bishop = new Bishop("white","f","1","bishop",3)
+  bishopc8:Bishop = new Bishop("black","c","8","bishop",3)
+  bishopf8:Bishop = new Bishop("black","f","8","bishop",3)
 
-  queend1:Piece = new Piece("white","d","1","queen",9)
-  queend8:Piece = new Piece("black","d","8","queen",9)
+  queend1:Queen = new Queen("white","d","1","queen",9)
+  queend8:Queen = new Queen("black","d","8","queen",9)
 
-  kinge1:Piece = new Piece("white","e","1","king",1000)
-  kinge8:Piece = new Piece("black","e","8","king",1000)
+  kinge1:King = new King("white","e","1","king",1000)
+  kinge8:King = new King("black","e","8","king",1000)
 
-  pawna2:Piece = new Piece("white","a","2","pawn",1)
-  pawnb2:Piece = new Piece("white","b","2","pawn",1)
-  pawnc2:Piece = new Piece("white","c","2","pawn",1)
-  pawnd2:Piece = new Piece("white","d","2","pawn",1)
-  pawne2:Piece = new Piece("white","e","2","pawn",1)
-  pawnf2:Piece = new Piece("white","f","2","pawn",1)
-  pawng2:Piece = new Piece("white","g","2","pawn",1)
-  pawnh2:Piece = new Piece("white","h","2","pawn",1)
+  pawna2:Pawn = new Pawn("white","a","2","pawn",1)
+  pawnb2:Pawn = new Pawn("white","b","2","pawn",1)
+  pawnc2:Pawn = new Pawn("white","c","2","pawn",1)
+  pawnd2:Pawn = new Pawn("white","d","2","pawn",1)
+  pawne2:Pawn = new Pawn("white","e","2","pawn",1)
+  pawnf2:Pawn = new Pawn("white","f","2","pawn",1)
+  pawng2:Pawn = new Pawn("white","g","2","pawn",1)
+  pawnh2:Pawn = new Pawn("white","h","2","pawn",1)
 
-  pawna7:Piece = new Piece("black","a","7","pawn",1)
-  pawnb7:Piece = new Piece("black","b","7","pawn",1)
-  pawnc7:Piece = new Piece("black","c","7","pawn",1)
-  pawnd7:Piece = new Piece("black","d","7","pawn",1)
-  pawne7:Piece = new Piece("black","e","7","pawn",1)
-  pawnf7:Piece = new Piece("black","f","7","pawn",1)
-  pawng7:Piece = new Piece("black","g","7","pawn",1)
-  pawnh7:Piece = new Piece("black","h","7","pawn",1)
+  pawna7:Pawn = new Pawn("black","a","7","pawn",1)
+  pawnb7:Pawn = new Pawn("black","b","7","pawn",1)
+  pawnc7:Pawn = new Pawn("black","c","7","pawn",1)
+  pawnd7:Pawn = new Pawn("black","d","7","pawn",1)
+  pawne7:Pawn = new Pawn("black","e","7","pawn",1)
+  pawnf7:Pawn = new Pawn("black","f","7","pawn",1)
+  pawng7:Pawn = new Pawn("black","g","7","pawn",1)
+  pawnh7:Pawn = new Pawn("black","h","7","pawn",1)
 
   //TODO: Create fake pieces for empty squares
-  a3:Piece = new Piece("","a","3","",0)
 
-  noPiece!: Piece;
+  noPiece:Piece = null;
   squares:Square[][] = [ 
     [
       {sqid : 'a1', horizontal:'a', vertical:'1', image : "./assets/images/towerw.png", color:"black", isEmpty:false, piece:this.towera1},
       {sqid : 'a2', horizontal:'a', vertical:'2', image : "./assets/images/pawnw.png", color:"white", isEmpty:false, piece:this.pawna2},
-      {sqid : 'a3', horizontal:'a', vertical:'3', image : "", color:"black", isEmpty:true, piece:this.a3},
+      {sqid : 'a3', horizontal:'a', vertical:'3', image : "", color:"black", isEmpty:true, piece:this.noPiece},
       {sqid : 'a4', horizontal:'a', vertical:'4', image : "", color:"white", isEmpty:true, piece:this.noPiece},
       {sqid : 'a5', horizontal:'a', vertical:'5', image : "", color:"black", isEmpty:true, piece:this.noPiece},
       {sqid : 'a6', horizontal:'a', vertical:'6', image : "", color:"white", isEmpty:true, piece:this.noPiece},

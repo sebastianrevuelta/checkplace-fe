@@ -5,64 +5,66 @@
 <div class="container">
     <table>
         <caption>This is the chess board</caption>
+        <th id="rows">
         <tbody>
             <tr *ngFor="let square of match.board.squares[0]"> 
                 <td>
                     <div class="container square {{square.color}}" id={{square.sqid}}>
-                        <img src="{{square.image}}" />
+                        <img src="{{square.image}}" alt=""/>
                     </div>
                 </td>
             </tr>
             <tr *ngFor="let square of match.board.squares[1]"> 
                 <td>
                     <div class="container square {{square.color}}" id={{square.sqid}}>
-                        <img src="{{square.image}}" />
+                        <img src="{{square.image}}" alt=""/>
                     </div>
                 </td>
             </tr>
             <tr *ngFor="let square of match.board.squares[2]"> 
                 <td>
                     <div class="container square {{square.color}}" id={{square.sqid}}>
-                        <img src="{{square.image}}" />
+                        <img src="{{square.image}}" alt=""/>
                     </div>
                 </td>
             </tr>
             <tr *ngFor="let square of match.board.squares[3]"> 
                 <td>
                     <div class="container square {{square.color}}" id={{square.sqid}}>
-                        <img src="{{square.image}}" />
+                        <img src="{{square.image}}" alt=""/>
                     </div>
                 </td>
             </tr>
             <tr *ngFor="let square of match.board.squares[4]"> 
                 <td>
                     <div class="container square {{square.color}}" id={{square.sqid}}>
-                        <img src="{{square.image}}" />
+                        <img src="{{square.image}}" alt=""/>
                     </div>
                 </td>
             </tr>
             <tr *ngFor="let square of match.board.squares[5]"> 
                 <td>
                     <div class="container square {{square.color}}" id={{square.sqid}}>
-                        <img src="{{square.image}}" />
+                        <img src="{{square.image}}" alt=""/>
                     </div>
                 </td>
             </tr>
             <tr *ngFor="let square of match.board.squares[6]"> 
                 <td>
                     <div class="container square {{square.color}}" id={{square.sqid}}>
-                        <img src="{{square.image}}" />
+                        <img src="{{square.image}}" alt=""/>
                     </div>
                 </td>
             </tr>
             <tr *ngFor="let square of match.board.squares[7]"> 
                 <td>
                     <div class="container square {{square.color}}" id={{square.sqid}}>
-                        <img src="{{square.image}}" />
+                        <img src="{{square.image}}" alt=""/>
                     </div>
                 </td>
             </tr>
         </tbody>
+        </th>
     </table>
 </div>
 <div class="container" id="move">

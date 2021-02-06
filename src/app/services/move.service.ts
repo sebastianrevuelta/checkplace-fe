@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { JPA_API_URL } from '../app.constants';
-import { Match, Square } from '../board/board.component';
+import { Match } from '../board/board.component';
 
 @Injectable({
   providedIn: 'root'

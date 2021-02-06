@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "checkplace"
+  "defaultProject": "checkplace",
+  "cli": {
+    "analytics": "5c005daa-919a-467c-ab90-e250b28a8fe3"
+  }
 }

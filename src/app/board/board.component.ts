@@ -226,8 +226,8 @@ export class BoardComponent implements OnInit {
 
   board:Board = new Board(this.squares)
   match:Match = new Match(this.board,"white",false,1,"","","","","")
-  playerName = 'kasparov'
-  history = 'e2e4'
+  playerName = ''
+  history = ''
   
 
   constructor(private route:ActivatedRoute, 
@@ -243,7 +243,7 @@ export class BoardComponent implements OnInit {
       data => {
         console.log(data)
         this.match = data
-        this.router.navigate(['board', this.playerName])
+        this.router.navigate(['board'])
       }
     );
   }

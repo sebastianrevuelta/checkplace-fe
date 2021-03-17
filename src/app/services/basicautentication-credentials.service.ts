@@ -30,13 +30,14 @@ export class BasicAuthenticationCredentialsService {
   }
 
   executeJWTAuthentication(username: string, password: string) {
-
-    return this.http.post<any>(`${API_URL}/authenticate`,
+   console.log('username: ' + username);
+   return this.http.post<any>(`${API_URL}/authenticate`,
    {username,password}).pipe(
       map(
         data => {
           sessionStorage.setItem('username',username);
           sessionStorage.setItem('token',`Bearer ${data.token}`);
+          console.log(`token: ${data.token}`);
           return data;
         }
       )

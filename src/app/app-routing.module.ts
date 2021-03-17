@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
-  { path: 'board/:name', component: BoardComponent, canActivate: [RouteGuardService]},
+  { path: 'board', component: BoardComponent, canActivate: [RouteGuardService]},
   { path: 'players', component: PlayerComponent, canActivate: [RouteGuardService]},
   { path: 'players/:id', component: PersonComponent, canActivate: [RouteGuardService]},
   { path: '**', component: ErrorComponent}

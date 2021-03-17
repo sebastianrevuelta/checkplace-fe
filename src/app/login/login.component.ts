@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { BoardComponent } from '../board/board.component';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BasicAuthenticationCredentialsService } from '../services/basicautentication-credentials.service';
 import { HardcodedCredentialsService } from '../services/hardcoded-credentials.service';
 
@@ -11,12 +10,12 @@ import { HardcodedCredentialsService } from '../services/hardcoded-credentials.s
 })
 export class LoginComponent implements OnInit {
 
-  username = 'sebas'
+  username = ''
   password = ''
   errorMessage = 'invalid credentials'
   invalidLogin = false
 
-  constructor(private router: Router, 
+  constructor(private route:ActivatedRoute, private router: Router, 
     public hardcodedCredentials: HardcodedCredentialsService,
     public basicauthCredentials: BasicAuthenticationCredentialsService) { }
 
@@ -48,11 +47,13 @@ export class LoginComponent implements OnInit {
   }
 
   handleJWTAuthenticationLogin() {
+    console.log('login as ' + this.username)
     this.basicauthCredentials.executeJWTAuthentication(this.username,this.password).subscribe(
       data => {
         console.log(data)
         this.invalidLogin = false
-        this.router.navigate(['board', this.username])
+        //this.route.snapshot.params['name'] = this.username
+        this.router.navigate(['board'])
       },
       error => {
         console.log(error)

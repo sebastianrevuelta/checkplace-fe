@@ -1,0 +1,58 @@
+# stackhawk configuration for checkplace
+app:
+  # An applicationId obtained from the StackHawk platform.
+  applicationId: xxxxxx # (required)
+  # The environment for the applicationId defined in the StackHawk platform.
+  env: Development # (required)
+  # The url of your application to scan
+  host: http://xxxxxx:4200 # (required)
+  # The names of your session tokens aka: cookie names
+#  sessionTokens: # (optional)
+#    - "_toy_app_session"
+#  # The name of your anti csrf parameter
+#  antiCsrfParam: authenticity_token # (optional)
+#
+  # Authentication configuration for scanning as a user.
+  # Enabling will force the scanner to scan as an
+  # authenticated user of your app.
+  authentication:
+    loggedInIndicator:  "\\QLogout\\E" # (required)
+    loggedOutIndicator: "\\QLogin\\E" # (required)
+    usernamePassword:
+      type: JSON
+      loginPath: /login
+      usernameField: username
+      passwordField: password
+      scanUsername: xxxx 
+      scanPassword: xxxx
+    tokenExtraction:
+      type: TOKEN_PATH
+      value: "token"
+    tokenAuthorization:
+      type: HEADER
+      value: Authorization
+      tokenType: Bearer
+    testPath:
+      path: /board
+      success: ".*200.*"
+#  # Path to openapi 2 spec file or inline openapi 2 spec yaml
+#  api: "openapi.json" # (optional)
+hawk:
+  # Web crawler / spider configuration
+  spider:
+    # Enable the base spider for discovering your app's routes
+    base: true # (default)
+    # Enable the ajax spider for discovering your single page app
+    ajax: true # (default)
+    # Maximum time for spider to discover routes in your app
+    maxDurationMinutes: 2 # (default)
+  # Maximum time to wait for the scanner to start up
+  startupTimeoutMinutes: 5 # (default)
+
+hawkAddOn: # (optional)
+#  # Custom scripts configurtation
+  # scripts: # (optional)
+    # Scripts begin with the _name_ key.
+  #   - name: 'checkplace-selenium.js'
+  #     type: 'standalone' 
+  #     path: '/home/sebas/tas/source/checkplace-fe/'

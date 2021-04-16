@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkplace-deployment
+  labels: 
+    tier: frontend
+spec: 
+  selector:
+    matchLabels:
+      app: checkplace
+  replicas: 3
+  template:
+    metadata:
+      name: checkplace-fe
+      labels: 
+        app: checkplace
+    spec: 
+      containers:
+        - name: checkplace-fe
+          image: sebastianrevuelta/checkplace-fe:3.0
+          imagePullPolicy: Never
+  

@@ -1,0 +1,23 @@
+<div class="container">
+    <h3><p>chess matches</p></h3>
+</div>
+<br><br>
+<div class="container">
+    <table>
+        <caption>chess matches</caption>
+        <th id="rows">
+        <tbody>
+            <tr *ngFor="let match of matches"> 
+                <td>
+                    <div class="container" id={{match.match_id}}>
+                        {{match.match}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        </th>
+    </table>
+</div>
+<div class="container" id="load">
+    <button (click)="load()" id="load" class="btn btn-success">Load!</button>
+</div>

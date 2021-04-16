@@ -14,6 +14,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { PlayerComponent } from './player/player.component';
 import { PersonComponent } from './person/person.component';
 import { InterceptorBasicAuthService } from './services/interceptor-basic-auth.service';
+import { MatchesComponent } from './matches/matches.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { InterceptorBasicAuthService } from './services/interceptor-basic-auth.s
     MenuComponent,
     LogoutComponent,
     PlayerComponent,
-    PersonComponent
+    PersonComponent,
+    MatchesComponent
   ],
   imports: [
     BrowserModule,

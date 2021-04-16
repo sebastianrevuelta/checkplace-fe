@@ -5,6 +5,7 @@
             <li><a href="https://www.securingsoftware.blog" class="nav-link">Blog</a></li>
             <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="./board" class="nav-link">New Game</a></li>
             <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="./players" class="nav-link">Players</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="./matches" class="nav-link">Matches</a></li>
         </ul>
 
         <ul class="navbar-nav navbar-collapse justify-content-end">

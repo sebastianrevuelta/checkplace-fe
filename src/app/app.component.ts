@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'checkplace';
-  message = 'an original chess game'
+  message = 'an original chess game developed with Angular - Spring boot - Maria DB - Cassandra - Docker images - Kubernetes'
 }

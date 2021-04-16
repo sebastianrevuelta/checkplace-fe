@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   username = ''
   password = ''
-  errorMessage = 'invalid credentials'
+  errorMessage = 'invalid credentials!'
   invalidLogin = false
 
   constructor(private route:ActivatedRoute, private router: Router, 
@@ -22,29 +22,29 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleLogin() {
-    if (this.hardcodedCredentials.authenticate(this.username,this.password)) {
-      this.invalidLogin = false
-      this.router.navigate(['board', this.username])
-    }
-    else {
-      this.invalidLogin = true
-    }
-  }
+  // handleLogin() {
+  //   if (this.hardcodedCredentials.authenticate(this.username,this.password)) {
+  //     this.invalidLogin = false
+  //     this.router.navigate(['board', this.username])
+  //   }
+  //   else {
+  //     this.invalidLogin = true
+  //   }
+  // }
 
-  handleBasicAuthenticationLogin() {
-    this.basicauthCredentials.executeBasicAuthentication(this.username,this.password).subscribe(
-      data => {
-        console.log(data)
-        this.invalidLogin = false
-        this.router.navigate(['board', this.username])
-      },
-      error => {
-        console.log(error)
-        this.invalidLogin = true
-      }
-    )
-  }
+  // handleBasicAuthenticationLogin() {
+  //   this.basicauthCredentials.executeBasicAuthentication(this.username,this.password).subscribe(
+  //     data => {
+  //       console.log(data)
+  //       this.invalidLogin = false
+  //       this.router.navigate(['board', this.username])
+  //     },
+  //     error => {
+  //       console.log(error)
+  //       this.invalidLogin = true
+  //     }
+  //   )
+  // }
 
   handleJWTAuthenticationLogin() {
     console.log('login as ' + this.username)
